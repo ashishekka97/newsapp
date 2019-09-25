@@ -1,0 +1,20 @@
+.header {
+  font-size: 24px;
+  text-align: center;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  padding: 1px;
+  text-align: justify;
+}
+
+.link a {
+  text-decoration: none;
+  color: rgb(55, 71, 79);
+}

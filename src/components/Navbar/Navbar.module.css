@@ -1,0 +1,31 @@
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(55, 71, 79);
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  color: aliceblue;
+  vertical-align: auto;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)
+}
+
+.links {
+  list-style: none;
+}
+
+.link {
+  margin-right: 20px;
+  color: aliceblue;
+  display: inline-block;
+  transition: all .2s ease-in-out 0s;
+}
+
+.link a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.link a:hover {
+  transform: scale(1.2);
+}

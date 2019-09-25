@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import rootSaga from './sagas';
+
+import styles from './App.module.css';
+import Content from './containers/Content/Content';
+import Details from './containers/Details/Details';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Sidebar from './containers/Sidebar/Sidebar';
+import StickyBox from "react-sticky-box";
+
+const store = configureStore();
+store.runSaga(rootSaga);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <div className={styles.container}>
+          <StickyBox offsetTop={20} offsetBottom={20}>
+            <Sidebar/>
+          </StickyBox>
+            <Switch>
+              <Route exact path="/" component={Content}/>
+              <Route exact path="/:section" component={Content}/>
+              <Route exact path="/details/:title" component={Details}/>
+            </Switch>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

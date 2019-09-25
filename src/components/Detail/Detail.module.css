@@ -1,0 +1,39 @@
+.detailWrapper {
+  width: 60%;
+  border-radius: 0.8rem;
+  margin: 0 auto;
+  box-shadow: 0rem 2rem 5rem rgba(0,0,0,0.2);
+  align-items: center;
+  flex-direction: column;
+}
+
+.detailImage {
+  width: 100%;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}
+
+.detailContent {
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.detailTitle {
+  font-size: 36px;
+  background-color: rgba(0,0,0,0.5);
+  color: aliceblue;
+  padding: 10px;
+}
+
+.detailText {
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  font-size: 24px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .detailWrapper {
+    width: 90%;
+  }
+}

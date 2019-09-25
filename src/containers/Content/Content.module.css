@@ -1,0 +1,11 @@
+.loader {
+  position: absolute;
+  margin-top: 20%;
+  left: 45%;
+}
+
+.home {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}

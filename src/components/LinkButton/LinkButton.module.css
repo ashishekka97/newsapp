@@ -1,0 +1,12 @@
+.button {
+  background-color: rgb(55, 71, 79);
+  padding: 15px;
+  box-shadow: 0rem 2rem 5rem rgba(0,0,0,0.2);
+  border-style: none;
+  border-radius: 0.8rem;
+  margin: 20px;
+  color: aliceblue;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+}

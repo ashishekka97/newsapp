@@ -1,0 +1,13 @@
+.loader {
+  position: absolute;
+  margin-top: 20%;
+  left: 45%;
+}
+
+@media screen and (max-width: 500px) {
+  .loader {
+    position: absolute;
+    margin-top: 20%;
+    left: 40%;
+  }
+}
