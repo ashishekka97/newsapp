@@ -5,39 +5,36 @@ import { connect } from 'react-redux';
 import { getTopStories } from '../../actions';
 import Loader from '../../components/Loader/Loader';
 
+const defaultSection = 'home';
+
 class Content extends React.Component {
+  state = {
+    section: defaultSection
+  }
 
   componentDidMount() {
-    console.log(this.props)
-    const section = this.props.match.params ? this.props.match.params.section : 'home';
-    console.log(section);
+    const section = this.props.match.params ? this.props.match.params.section : defaultSection;
     this.props.loadStories(section);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    if (nextProps.match.params.section !== this.props.match.params.section) {
-      const section = nextProps.match.params.section
+  componentDidUpdate() {
+    if (this.props.match.params.section !== this.state.section) {
+      const section = this.props.match.params.section;
+      this.setState({ section })
       this.props.loadStories(section);
-      console.log('called');
     }
   }
 
   render() {
     return (
       <div className={styles.home}>
-        {
-          this.props.stories.isLoading ? <Loader />
-          :
-          <Articles data={this.props.stories.stories}/>
-        }
+        { this.props.stories.isLoading ? <Loader /> : <Articles data={this.props.stories.stories}/> }
       </div>
     )
   }
 }
 
-function mapStateToProps(state, props) {
-  console.log(props)
+function mapStateToProps(state) {
   return {
     stories: state.stories
   }

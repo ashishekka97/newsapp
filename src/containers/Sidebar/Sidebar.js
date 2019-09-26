@@ -5,7 +5,6 @@ import styles from './Sidebar.module.css';
 
 class Sidebar extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className={styles.sidebar}>
         <Links links={sections}/>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { key as APIkey} from '../config/nytAPIkey';
+import { key as APIkey} from '../../config/nytAPIkey';
 
 export function fetchTopStories(section = 'home') {
   return axios.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${APIkey}`)

@@ -7,25 +7,19 @@ import Loader from '../../components/Loader/Loader';
 
 import Detail from '../../components/Detail/Detail';
 
+const defaultTitle = "The Most Powerful Lightning Strikes in Unexpected Places";
+
 class Details extends React.Component {
   componentDidMount() {
-    const title = this.props.match.params ? this.props.match.params.title : "The Most Powerful Lightning Strikes in Unexpected Places"
+    const title = this.props.match.params ? this.props.match.params.title : defaultTitle;
     this.props.loadArticle(title);
   }
 
   render() {
-    console.log(this.props.article);
-    const article = {
-      ...this.props.article
-    }
 
     return (
       <div className={styles.details}>
-        {
-          article.isLoading ? <Loader/>
-          :
-          <Detail article={article.article}/>
-        }
+        {this.props.article.isLoading ? <Loader/> : <Detail article={ this.props.article.article}/> }
       </div>
     )
   }
