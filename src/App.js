@@ -18,7 +18,8 @@ store.runSaga(rootSaga);
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      {/* <Router> */}
+      <Router basename="/newsapp">
         <Navbar />
         <div className={styles.container}>
           <StickyBox offsetTop={20} offsetBottom={20}>
