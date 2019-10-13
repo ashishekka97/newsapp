@@ -2,7 +2,7 @@ import React from 'react';
 import Articles from '../../components/Articles/Articles';
 import styles from './Content.module.css';
 import { connect } from 'react-redux';
-import { getTopStories } from '../../actions';
+import { getTopStories } from '../../redux/actions';
 import Loader from '../../components/Loader/Loader';
 
 const defaultSection = 'home';

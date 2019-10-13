@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Details.module.css';
 
-import { getArticle } from '../../actions';
+import { getArticle } from '../../redux/actions';
 import { connect } from "react-redux";
 import Loader from '../../components/Loader/Loader';
 
