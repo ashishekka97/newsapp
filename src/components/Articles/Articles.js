@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 import slugify from 'slugify';
 
 const Articles = (props) => {
+  slugify.extend({
+    '$': '$'
+  })
   return (
     <div className={styles.articles}>
       {
         props.data.map(article => {
-          const articleTitle = slugify((article.title).toLowerCase(), {remove: /[*+~.()'"!:@]/g});
+          const articleTitle = slugify((article.title), {remove: /[*+~.(),$'"!:@]/g, lower: true});
           return <Link to={`details/${articleTitle}`} key={articleTitle}><Article data={article}/></Link>
         })
       }
